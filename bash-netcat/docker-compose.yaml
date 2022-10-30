@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  server:
+    image: alpine:latest
+    command: "sh start.sh"
+    volumes:
+      - ./start.sh:/start.sh
+      - ./index.html:/index.html
+      - ./test.sh:/test.sh
+    ports:
+      - 8080:8080
+      - 8081:8081
