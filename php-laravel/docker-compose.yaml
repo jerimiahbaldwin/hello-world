@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  server:
+    build:
+      context: .
+    volumes:
+      - ./src/app:/var/project/app
+      - ./src/bootstrap:/var/project/bootstrap
+      - ./src/config:/var/project/config
+      - ./src/database:/var/project/database
+      - ./src/en:/var/project/en
+      - ./src/public:/var/project/public
+      - ./src/resources:/var/project/resources
+      - ./src/routes:/var/project/routes
+      - ./src/storage:/var/project/storage
+      - ./src/tests:/var/project/tests
+      - ./src/.env:/var/project/.env
+      - ./src/package.json:/var/project/package.json
+      - ./src/phpunit.xml:/var/project/phpunit.xml
+      - ./src/vite.config.js:/var/project/vite.config.js
+    ports:
+      - 8080:8080
