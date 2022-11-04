@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  server:
+    image: node:alpine
+    command: sh -c "npm ci && node src/index.js"
+    volumes:
+      - ./package.json:/package.json
+      - ./package-lock.json:/package-lock.json
+      - ./src:/src
+    ports:
+      - 8080:3000
