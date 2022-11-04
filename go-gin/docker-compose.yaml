@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  server:
+    image: golang:alpine
+    volumes:
+    - ./hello-world:/go/src/hello-world
+    command: sh -c "cd src/hello-world && go install && go run main.go"
+    ports:
+    - 8080:8080
