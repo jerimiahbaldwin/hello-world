@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  server:
+    image: node:alpine
+    command: sh -c "npm ci --no-fund --no-audit && npm run start"
+    volumes:
+      - ./package.json:/package.json
+      - ./package-lock.json:/package-lock.json
+      - ./tsconfig.json:/tsconfig.json
+      - ./tsconfig.build.json:/tsconfig.build.json
+      - ./src:/src
+      - ./test:/test
+    ports:
+      - 8080:3000
